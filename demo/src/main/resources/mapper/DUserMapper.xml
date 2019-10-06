@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.cluster.d460.DUserMapper">
+    <insert id="add" parameterType="com.example.demo.entity.User">
+        insert into test_mitre_user
+        values(
+        #{name},
+        #{age}
+        )
+    </insert>
+
+    <delete id="del" parameterType="com.example.demo.entity.User">
+        delete from test_mitre_user
+        where 
+        name=#{name}
+    </delete>
+</mapper>

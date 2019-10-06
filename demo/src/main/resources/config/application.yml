@@ -1,0 +1,53 @@
+spring:
+    jackson:
+        serialization.indent_output: true
+        time-zone: GMT+8
+    datasource:
+        master:
+            type: com.zaxxer.hikari.HikariDataSource
+            jdbc-url: jdbc:oracle:thin:@ip:1521:S460
+            driver-class-name: oracle.jdbc.OracleDriver
+            username: faext
+            password: faext
+            hikari:
+                data-source-properties:
+                    cachePrepStmts: true
+                    prepStmtCacheSize: 250
+                    prepStmtCacheSqlLimit: 2048
+                    useServerPrepStmts: true
+                minimum-idle: 2
+                maximum-pool-size: 10
+                connection-test-query: SELECT 1 FROM DUAL
+                idle-timeout: 20000
+                connection-timeout: 40000
+        cluster1:
+            type: com.zaxxer.hikari.HikariDataSource
+            jdbc-url: jdbc:oracle:thin:@ip:1521:D460
+            # driver-class-name: oracle.jdbc.OracleDriver
+            username: faext
+            password: faext
+            hikari:
+                data-source-properties:
+                    cachePrepStmts: true
+                    prepStmtCacheSize: 250
+                    prepStmtCacheSqlLimit: 2048
+                    useServerPrepStmts: true
+                minimum-idle: 2
+                maximum-pool-size: 10
+                connection-test-query: SELECT 1 FROM DUAL
+                idle-timeout: 20000
+                connection-timeout: 40000
+    servlet:
+        multipart:
+            max-file-size: 1024MB
+            max-request-size: 2048MB
+
+server:
+    port: 8036
+    tomcat:
+        max-threads: 200
+
+# Mybatis 相关配置
+mybatis:
+    mapperLocations: classpath*:mapper/*.xml
+    configLocation: classpath:config/mybatis-config.xml
