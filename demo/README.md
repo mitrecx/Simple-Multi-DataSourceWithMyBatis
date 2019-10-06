@@ -1,9 +1,9 @@
 # SpringBoot+MyBatis 实现 多数据源切换
 大致实现步骤如下:  
-1, 在application.yml 中配置多个数据源
-2, 手动创建多个数据源 bean
-3, 创建 MyBatis 操作数据源相关实例: SqlSessionFactory, SqlSessionTemplate
-4, 创建 Spring 提供的事务管理器 实例: DataSourceTransactionManager 
+1, 在application.yml 中配置多个数据源  
+2, 手动创建多个数据源 bean   
+3, 创建 MyBatis 操作数据源相关实例: SqlSessionFactory, SqlSessionTemplate  
+4, 创建 Spring 提供的事务管理器 实例: DataSourceTransactionManager   
 
 
 
